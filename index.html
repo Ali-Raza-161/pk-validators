@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pk-validators — Pakistani CNIC, Mobile, NTN &amp; IBAN Validation</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="logo"><span class="logo-badge">PK</span><div><strong>pk-validators</strong><span>Pakistani forms, done right</span></div></div>
+    <nav><a href="#validators">Validators</a><a href="#examples">Examples</a><a href="#operators">Operators</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">BUILT FOR PAKISTANI FORMS</p>
+      <h1>Stop copy-pasting regex.<br><span>Validate CNIC, mobile, NTN &amp; IBAN — properly.</span></h1>
+      <p class="hero-sub">One small library for the four fields every Pakistani form needs. Live validation, clean formatting, operator detection, and a real IBAN checksum — no backend, no API key.</p>
+      <div class="hero-stats">
+        <div><strong>4</strong><span>validators</span></div>
+        <div><strong>24</strong><span>IBAN chars checked</span></div>
+        <div><strong>MOD-97</strong><span>real IBAN checksum</span></div>
+        <div><strong>0</strong><span>dependencies</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <p class="hero-card-title">Try it in 5 seconds</p>
+      <p class="hero-card-code">formatCNIC('3520212345671')</p>
+      <p class="hero-card-result">→ 35202-1234567-1 ✓ Valid</p>
+      <p class="hero-card-code">getOperator('03001234567')</p>
+      <p class="hero-card-result">→ Jazz</p>
+      <p class="hero-card-note">Paste any value below and see the result instantly.</p>
+    </div>
+  </section>
+
+  <section id="validators" class="grid">
+    <!-- CNIC -->
+    <article class="card" id="card-cnic">
+      <div class="card-head"><span class="icon">🪪</span><div><h2>CNIC</h2><p>13 digits · 35202-1234567-1</p></div><span class="badge">Format only</span></div>
+      <label for="input-cnic">CNIC number</label>
+      <input id="input-cnic" type="text" placeholder="35202-1234567-1" autocomplete="off">
+      <div class="btn-row">
+        <button data-action="validate" data-type="cnic" class="btn-primary">Validate</button>
+        <button data-action="format" data-type="cnic" class="btn-ghost">Format</button>
+        <button data-action="example" data-type="cnic" class="btn-ghost">Valid example</button>
+      </div>
+      <div class="result" id="result-cnic"><p class="muted">Result yahan nazar aayega.</p></div>
+      <button data-action="snippet" data-type="cnic" class="btn-link">📋 Copy code snippet</button>
+      <pre class="snippet" id="snippet-cnic"></pre>
+    </article>
+
+    <!-- Mobile -->
+    <article class="card" id="card-mobile">
+      <div class="card-head"><span class="icon">📱</span><div><h2>Mobile Number</h2><p>03XX-XXXXXXX · operator detection</p></div><span class="badge green">Operator ✓</span></div>
+      <label for="input-mobile">Mobile number</label>
+      <input id="input-mobile" type="text" placeholder="0300-1234567" autocomplete="off">
+      <div class="btn-row">
+        <button data-action="validate" data-type="mobile" class="btn-primary">Validate</button>
+        <button data-action="format" data-type="mobile" class="btn-ghost">Format</button>
+        <button data-action="example" data-type="mobile" class="btn-ghost">Valid example</button>
+      </div>
+      <div class="result" id="result-mobile"><p class="muted">Result yahan nazar aayega.</p></div>
+      <button data-action="snippet" data-type="mobile" class="btn-link">📋 Copy code snippet</button>
+      <pre class="snippet" id="snippet-mobile"></pre>
+    </article>
+
+    <!-- NTN -->
+    <article class="card" id="card-ntn">
+      <div class="card-head"><span class="icon">🧾</span><div><h2>NTN</h2><p>7 digits · 1234567-8</p></div><span class="badge">Format only</span></div>
+      <label for="input-ntn">NTN</label>
+      <input id="input-ntn" type="text" placeholder="1234567-8" autocomplete="off">
+      <div class="btn-row">
+        <button data-action="validate" data-type="ntn" class="btn-primary">Validate</button>
+        <button data-action="format" data-type="ntn" class="btn-ghost">Format</button>
+        <button data-action="example" data-type="ntn" class="btn-ghost">Valid example</button>
+      </div>
+      <div class="result" id="result-ntn"><p class="muted">Result yahan nazar aayega.</p></div>
+      <button data-action="snippet" data-type="ntn" class="btn-link">📋 Copy code snippet</button>
+      <pre class="snippet" id="snippet-ntn"></pre>
+    </article>
+
+    <!-- IBAN -->
+    <article class="card" id="card-iban">
+      <div class="card-head"><span class="icon">🏦</span><div><h2>IBAN — Pakistan</h2><p>24 chars · real MOD-97 checksum</p></div><span class="badge green">Checksum ✓</span></div>
+      <label for="input-iban">IBAN</label>
+      <input id="input-iban" type="text" placeholder="PK36 SCBL 0000 0011 2345 6702" autocomplete="off">
+      <div class="btn-row">
+        <button data-action="validate" data-type="iban" class="btn-primary">Validate</button>
+        <button data-action="format" data-type="iban" class="btn-ghost">Format</button>
+        <button data-action="example" data-type="iban" class="btn-ghost">Valid example</button>
+      </div>
+      <div class="result" id="result-iban"><p class="muted">Result yahan nazar aayega.</p></div>
+      <button data-action="snippet" data-type="iban" class="btn-link">📋 Copy code snippet</button>
+      <pre class="snippet" id="snippet-iban"></pre>
+    </article>
+  </section>
+
+  <section id="examples" class="panel">
+    <h2>Try examples — valid vs invalid</h2>
+    <p>Ek click par valid ya invalid example fill ho jayega. Invalid examples jaanboojh kar ghalat rakhe gaye hain taake error messages dikhen.</p>
+    <div class="example-grid" id="example-grid"></div>
+  </section>
+
+  <section id="operators" class="panel">
+    <h2>Mobile operator prefixes</h2>
+    <p>Prefix tables waqt ke sath change ho sakti hain — library me table update karna aasan hai. Jo prefix list me nahi, us ka operator “Unknown” aayega, kabhi guess nahi kiya jayega.</p>
+    <div class="operator-grid" id="operator-grid"></div>
+  </section>
+
+  <footer class="footer">
+    <h3>Honest notes — please read</h3>
+    <ul>
+      <li><strong>CNIC aur NTN validation sirf FORMAT ki hai.</strong> Ye kisi asli shakhs ya business ko NADRA ya FBR se verify nahi karta, kyunki wo data public nahi hai. Sahi format ka matlab sirf ye hai ke number likhne ka tareeqa durust hai.</li>
+      <li><strong>IBAN checksum asli mathematical check hai (MOD-97, ISO 13616).</strong> Ye ghalat check digit pakar lega, lekin ye bhi account ke maujood hone ki guarantee nahi deta.</li>
+      <li>Ye demo local hai: koi data server par nahi bheja jata, koi API key nahi chahiye.</li>
+    </ul>
+  </footer>
+</main>
+
+<script src="validators.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
